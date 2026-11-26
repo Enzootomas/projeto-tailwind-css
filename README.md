@@ -4,11 +4,46 @@ Projeto desenvolvido com **React**, **Vite** e **Tailwind CSS v4** para atender 
 
 ---
 
+## 📸 Captura de Tela da Aplicação em Funcionamento
+
+![Tailwind UI Studio em funcionamento](./docs/screenshot-tailwind.png)
+
+---
+
 ## 🎯 Requisitos Atendidos (Aula 07 — Atividade 02)
 
-1. Aplicação utilizando **mais de 30 classes diferentes do Tailwind CSS** (foram aplicadas **45 classes distintas** documentadas abaixo);
-2. Cobertura completa das **9 categorias solicitadas**: cores, tipografia, espaçamentos, dimensões, bordas, posicionamento, flexbox, grid e responsividade;
-3. Documentação em Markdown com explicação do código, lista completa das classes utilizadas com suas respectivas funções e instruções de execução/deploy.
+1. Aplicação utilizando **pelo menos 30 classes diferentes do Tailwind CSS** (foram aplicadas **45 classes distintas** documentadas abaixo);
+2. Cobertura integral das **9 categorias solicitadas**: cores, tipografia, espaçamentos, dimensões, bordas, posicionamento, flexbox, grid e responsividade;
+3. Documentação em Markdown contendo captura real da aplicação, trechos do código-fonte, lista completa das classes utilizadas com suas respectivas funções e instruções de execução.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- React 19
+- Vite 7
+- Tailwind CSS v4 (`@tailwindcss/vite`)
+- JavaScript (ES Modules)
+
+---
+
+## 📁 Estrutura de Diretórios
+
+```text
+projeto-tailwind-css/
+├── docs/
+│   └── screenshot-tailwind.png
+├── src/
+│   ├── App.jsx             # Interface Utility-First com filtro interativo
+│   ├── index.css           # Importação oficial @import "tailwindcss";
+│   └── main.jsx
+├── .gitignore
+├── index.html
+├── package.json
+├── vercel.json
+├── vite.config.js
+└── README.md
+```
 
 ---
 
@@ -64,38 +99,47 @@ Projeto desenvolvido com **React**, **Vite** e **Tailwind CSS v4** para atender 
 
 ---
 
-## 💻 Trecho Principal de Configuração (Tailwind CSS v4)
+## 💻 Trechos Principais do Código
 
-Importação no CSS (`src/index.css`):
+Importação do Tailwind CSS v4 (`src/index.css`):
 
 ```css
 @import "tailwindcss";
 ```
 
-Integração no Vite (`vite.config.js`):
+Composição Utility-First nos cartões responsivos (`src/App.jsx`):
 
-```js
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
-
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-});
+```jsx
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {itensVisiveis.map((modulo) => (
+    <article
+      key={modulo.id}
+      className="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between gap-4 hover:border-indigo-500/60 transition-colors"
+    >
+      <span className="text-xs font-semibold text-indigo-400 uppercase tracking-wide">
+        {modulo.categoria}
+      </span>
+      <h3 className="text-lg font-bold text-white">{modulo.titulo}</h3>
+      <p className="text-sm text-slate-300 leading-relaxed">{modulo.descricao}</p>
+    </article>
+  ))}
+</div>
 ```
 
 ---
 
-## 🚀 Como Executar Localmente
+## 🚀 Instruções de Instalação e Execução
 
 ```bash
-# Instalar dependências
+git clone https://github.com/Enzootomas/projeto-tailwind-css.git
+cd projeto-tailwind-css
 npm install
-
-# Executar servidor de desenvolvimento
 npm run dev
+```
 
-# Gerar build otimizado de produção
+Para gerar o build otimizado de produção:
+
+```bash
 npm run build
 ```
 
@@ -103,4 +147,5 @@ npm run build
 
 ## 🎓 Disciplina
 
-**Frameworks Front-end** — SENAI | Prof. Me. Deivison S. Takatu
+**Frameworks Front-end** — Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas (SENAI)  
+**Professor:** Me. Deivison S. Takatu
