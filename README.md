@@ -2,6 +2,9 @@
 
 Projeto desenvolvido com **React**, **Vite** e **Tailwind CSS v4** para atender integralmente à **Atividade 02 da Aula 07 (Frameworks CSS)** da disciplina de **Frameworks Front-end** (SENAI).
 
+- **Deploy em Produção (Vercel):** [🌐 Ver online](https://projeto-tailwind-css.vercel.app)
+- **Repositório GitHub:** [🔗 Repositório](https://github.com/Enzootomas/projeto-tailwind-css)
+
 ---
 
 ## 📸 Captura de Tela da Aplicação em Funcionamento
